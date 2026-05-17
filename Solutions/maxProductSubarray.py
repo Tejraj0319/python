@@ -1,3 +1,4 @@
+# maximum product of any continuous subarray
 def maxProductSubarray(nums):
     max_val = nums[0]
     min_val = nums[0]
@@ -10,3 +11,21 @@ def maxProductSubarray(nums):
         result = max(result, max_val)
     return result
 print(maxProductSubarray([2, -3, -3, -2, 4]))
+
+
+# Valid Parentheses
+def isValid(str):
+    stack=[]
+    for element in str:
+        if element == "(" or element == "{" or element == "[":
+            stack.append(element)
+        else:
+            if len(stack) == 0:
+                return False
+            last = stack.pop()
+            if((element == ")" and last != "(") or
+            (element == "}" and last != "{") or
+            (element == "]" and last != "[")):
+              return False
+    return len(stack)==0
+print(isValid("({[]})"))
