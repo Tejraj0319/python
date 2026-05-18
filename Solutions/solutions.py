@@ -29,3 +29,18 @@ def isValid(str):
               return False
     return len(stack)==0
 print(isValid("({[]})"))
+
+
+# String Compression
+def stringCompression(s):
+    count = 1
+    new_str = ""
+    for i in range(1, len(s)+1):
+        if i < len(s) and s[i] == s[i-1]:
+            count += 1
+        else:
+            new_str += s[i-1] + str(count)
+            count = 1
+    return new_str if len(new_str) < len(s) else s
+print(stringCompression("aabcccccaaa"))
+
