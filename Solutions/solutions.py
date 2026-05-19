@@ -44,3 +44,13 @@ def stringCompression(s):
     return new_str if len(new_str) < len(s) else s
 print(stringCompression("aabcccccaaa"))
 
+
+# Custom Reduce Function Implementation
+def my_function(arr, callback, intial_value):
+  accumulator = intial_value;
+  for i in range(len(arr)):
+    accumulator = callback(accumulator, arr[i])
+  return accumulator
+num = [1,2,3,4]
+result = my_function(num, lambda acc, curr: acc + curr, 0)
+print("num:",result)
