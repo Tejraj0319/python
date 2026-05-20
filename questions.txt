@@ -2,3 +2,4 @@ maximum product of any continuous subarray
 Valid Parentheses
 String Compression
 Custom Reduce Function Implementation
+Single number

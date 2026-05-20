@@ -54,3 +54,13 @@ def my_function(arr, callback, intial_value):
 num = [1,2,3,4]
 result = my_function(num, lambda acc, curr: acc + curr, 0)
 print("num:",result)
+
+
+# Single number
+def single_number(arr):
+    xor = 0
+    for i in arr:
+        xor = xor ^ i
+    return xor
+print(single_number([1, 1, 4, 2, 2]))
+
