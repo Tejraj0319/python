@@ -64,3 +64,12 @@ def single_number(arr):
     return xor
 print(single_number([1, 1, 4, 2, 2]))
 
+# Find Missing number using xor
+def find_missing(arr, n):
+  xor = 0
+  for i in range(1, n+1):
+    xor ^= i 
+  for num in arr:
+    xor ^= num
+  return xor
+print(find_missing([1, 2, 3, 5], 5))
