@@ -4,3 +4,4 @@ String Compression
 Custom Reduce Function Implementation
 Find Missing no using xor
 Single number
+Find Duplicate Elements in an Array

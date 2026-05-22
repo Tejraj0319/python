@@ -64,6 +64,7 @@ def single_number(arr):
     return xor
 print(single_number([1, 1, 4, 2, 2]))
 
+
 # Find Missing number using xor
 def find_missing(arr, n):
   xor = 0
@@ -73,3 +74,16 @@ def find_missing(arr, n):
     xor ^= num
   return xor
 print(find_missing([1, 2, 3, 5], 5))
+
+
+# Find Duplicate Elements in an Array
+def find_duplicates(arr):
+  freq_map={}
+  duplicates = []
+  for num in arr:
+    freq_map[num] = freq_map.get(num, 0) + 1
+  for key, value in freq_map.items():
+    if value > 1:
+      duplicates.append(key)
+  return duplicates
+print(find_duplicates([1, 2, 3, 2, 4, 5, 1]))
