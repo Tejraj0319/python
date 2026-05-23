@@ -87,3 +87,14 @@ def find_duplicates(arr):
       duplicates.append(key)
   return duplicates
 print(find_duplicates([1, 2, 3, 2, 4, 5, 1]))
+
+# Rotate Array by K Steps (Right Rotation)
+def rotate_array(arr, k):
+  result= []
+  arr_len = len(arr) 
+  for i in range (arr_len-k, arr_len):
+    result.append(arr[i])
+  for i in range(0, arr_len-k):
+    result.append(arr[i])
+  return result
+print(rotate_array([1, 2, 3, 4, 5, 6, 7, 8, 9], 2))
