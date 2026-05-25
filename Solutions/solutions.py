@@ -88,6 +88,7 @@ def find_duplicates(arr):
   return duplicates
 print(find_duplicates([1, 2, 3, 2, 4, 5, 1]))
 
+
 # Rotate Array by K Steps (Right Rotation)
 def rotate_array(arr, k):
   result= []
