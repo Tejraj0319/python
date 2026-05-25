@@ -98,3 +98,16 @@ def rotate_array(arr, k):
     result.append(arr[i])
   return result
 print(rotate_array([1, 2, 3, 4, 5, 6, 7, 8, 9], 2))
+
+
+# Product of Array Except Self
+def product_except_self(arr):
+  newArr = []
+  for i in arr:
+    prod = 1
+    for j in arr:
+      if i != j:
+        prod = j * prod
+    newArr.append(prod)
+  return newArr
+print(product_except_self([1, 2, 3, 4]))
