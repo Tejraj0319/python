@@ -112,3 +112,18 @@ def product_except_self(arr):
     newArr.append(prod)
   return newArr
 print(product_except_self([1, 2, 3, 4]))
+
+
+# toLowerCase
+def to_lower_case(str):
+  result = ""
+  for i in range(len(str)):
+    char_code = (ord(str[i]))
+    # ord(): returns the Unicode code point 
+    if char_code >= 65 and char_code <= 90:
+      # chr() : reverse of ord()
+      result += chr(char_code + 32)
+    else:
+      result += str[i];
+  return result;
+print(to_lower_case("RAJESH aNANta paTIL"))
