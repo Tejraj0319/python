@@ -127,3 +127,36 @@ def to_lower_case(str):
       result += str[i];
   return result;
 print(to_lower_case("RAJESH aNANta paTIL"))
+
+
+# First Unique Character in a String
+def first_unique_char(s):
+  freq= {}
+  for char in s:
+    freq[char] = freq.get(char, 0) + 1
+  for char in freq:
+    if freq[char] == 1:
+        return char
+print(first_unique_char("lovelveetcode"))
+
+
+# Check if Two Strings are Isomorphic
+def is_isomorphic(str1, str2):
+  if len(str1) != len(str2):
+    return False
+  obj1 = {}
+  obj2 = {}
+  for i in range(len(str1)):
+    char1 = str1[i]
+    char2 = str2[i]
+    if char1 in obj1 and obj1[char1] != char2:
+      return False
+    if char2 in obj2 and obj2[char2] != char1:
+      return False
+    obj1[char1] = char2
+    obj2[char2] = char1
+  return True
+print(is_isomorphic("egg", "add"))
+
+
+

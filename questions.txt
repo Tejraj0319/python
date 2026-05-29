@@ -8,3 +8,5 @@ Find Duplicate Elements in an Array
 Rotate Array by K Steps (Right Rotation)
 Product of Array Except Self
 toLowerCase
+First Unique Character in a String
+Check if Two Strings are Isomorphic
