@@ -159,4 +159,27 @@ def is_isomorphic(str1, str2):
 print(is_isomorphic("egg", "add"))
 
 
+# Find the Intersection of Two Arrays
+def intersection(arr1, arr2):
+  new_arr = []
+  for i in arr1:
+    if i in arr2:
+      new_arr.append(i)
+      arr2.remove(i)
+  return new_arr
+print(intersection([1, 2, 2, 3, 4], [2, 2, 4, 6, 5, 1]))
 
+
+# Find the Longest Common Prefix
+def longest_common_prefix(arr):
+  arr.sort()
+  first_word = arr[0]
+  last_word = arr[-1]
+  new_str = ""
+  for i in range(min(len(first_word), len(last_word))):
+    if first_word[i] == last_word[i]:
+      new_str += first_word[i]
+    else:
+      break
+  return new_str
+print(longest_common_prefix(["apple", "app", "application"]))

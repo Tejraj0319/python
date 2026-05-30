@@ -10,3 +10,5 @@ Product of Array Except Self
 toLowerCase
 First Unique Character in a String
 Check if Two Strings are Isomorphic
+Find the Intersection of Two Arrays
+Find the Longest Common Prefix
