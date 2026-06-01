@@ -183,3 +183,12 @@ def longest_common_prefix(arr):
       break
   return new_str
 print(longest_common_prefix(["apple", "app", "application"]))
+
+
+# Check if two strings are anagrams
+def isAnagram(str1,str2):
+  if len(str1) != len(str2): return False
+  s1 = "".join(sorted(str1.lower()))
+  s2 = "".join(sorted(str1.lower()))
+  return s1 == s2
+print(isAnagram("listen", "silent"))

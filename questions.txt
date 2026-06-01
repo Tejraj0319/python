@@ -12,3 +12,4 @@ First Unique Character in a String
 Check if Two Strings are Isomorphic
 Find the Intersection of Two Arrays
 Find the Longest Common Prefix
+Check if two strings are anagrams
