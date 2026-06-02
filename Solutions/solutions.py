@@ -192,3 +192,17 @@ def isAnagram(str1,str2):
   s2 = "".join(sorted(str1.lower()))
   return s1 == s2
 print(isAnagram("listen", "silent"))
+
+
+
+
+def longest_substring(s):
+  max_length = 0;
+  arr = []
+  for char in s:
+    while char in arr:
+      arr.pop(0)
+    arr.append(char)
+    max_length = max(max_length, len(arr))
+  return max_length
+print(longest_substring("abcdabcbb"))
