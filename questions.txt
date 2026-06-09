@@ -14,3 +14,4 @@ Find the Intersection of Two Arrays
 Find the Longest Common Prefix
 Check if two strings are anagrams
 Longest Substring Without Repeating Characters
+find the index from elements started repeating

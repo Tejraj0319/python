@@ -194,10 +194,9 @@ def isAnagram(str1,str2):
 print(isAnagram("listen", "silent"))
 
 
-
-
+# Longest Substring Without Repeating Characters
 def longest_substring(s):
-  max_length = 0;
+  max_length = 0
   arr = []
   for char in s:
     while char in arr:
@@ -206,3 +205,12 @@ def longest_substring(s):
     max_length = max(max_length, len(arr))
   return max_length
 print(longest_substring("abcdabcbb"))
+
+
+# find the index from elements started repeating
+def repeating(arr):
+    s = set()
+    for i in arr:
+        s.add(i)
+    return len(s)
+print(repeating([1,2,3,4,5,6,1,2]))
