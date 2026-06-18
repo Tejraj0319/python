@@ -237,3 +237,16 @@ def merge_sorted_arrays(arr1, arr2):
         j+=1
     return result
 print(merge_sorted_arrays([1, 2, 3, 5, 7], [4, 6]))
+
+
+# Check if a string is a palindrome
+# start → where to begin
+# stop → where to end (not included)
+# step → how many positions to move each time
+
+text = "madam"
+reversed_text = text[::-1] #variable[start : stop : step]
+if reversed_text == text:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
