@@ -245,8 +245,9 @@ print(merge_sorted_arrays([1, 2, 3, 5, 7], [4, 6]))
 # step → how many positions to move each time
 
 text = "madam"
-reversed_text = text[::-1] #variable[start : stop : step]
+reversed_text = text[::-1] # variable[Start from here : Stop before here : Move by this many steps]
 if reversed_text == text:
     print("Palindrome")
 else:
     print("Not Palindrome")
+
