@@ -18,3 +18,5 @@ find the index from elements started repeating
 Merge Two Sorted Arrays
 Check if a string is a palindrome
 Reverse a string
+Move All Zeros to End
+Reverse Words in a Sentence
