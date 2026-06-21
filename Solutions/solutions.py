@@ -313,3 +313,12 @@ def reverse_words(text):
         result.append(reverse_word)
     return " ".join(result)
 print(reverse_words("hello world"))
+
+
+# Count frequency of each character in a string.
+def char_count(s):
+    count = {}
+    for char in s:
+        count[char] = count.get(char,0) + 1
+    return count
+print(char_count("aabbc"))
