@@ -273,6 +273,8 @@ def merge_sorted_arrays(arr1, arr2):
         result.append(arr2[j])
         j += 1
     return result
+
+
 print(merge_sorted_arrays([1, 2, 3, 5, 7], [4, 6]))
 
 
@@ -282,7 +284,9 @@ print(merge_sorted_arrays([1, 2, 3, 5, 7], [4, 6]))
 # step → how many positions to move each time
 
 text = "madam"
-reversed_text = text[::-1]  # variable[Start from here : Stop before here : Move by this many steps]
+reversed_text = text[
+    ::-1
+]  # variable[Start from here : Stop before here : Move by this many steps]
 if reversed_text == text:
     print("Palindrome")
 else:
@@ -301,6 +305,8 @@ def move_zeros(arr):
         new_arr.append(0)
         j += 1
     return new_arr
+
+
 print(move_zeros([0, 1, 0, 3, 12]))
 
 
@@ -312,6 +318,8 @@ def reverse_words(text):
         reverse_word = i[::-1]
         result.append(reverse_word)
     return " ".join(result)
+
+
 print(reverse_words("hello world"))
 
 
@@ -319,6 +327,8 @@ print(reverse_words("hello world"))
 def char_count(s):
     count = {}
     for char in s:
-        count[char] = count.get(char,0) + 1
+        count[char] = count.get(char, 0) + 1
     return count
+
+
 print(char_count("aabbc"))
