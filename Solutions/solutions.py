@@ -332,3 +332,28 @@ def char_count(s):
 
 
 print(char_count("aabbc"))
+
+
+
+# LeetCode 394 - Decode String
+def decode_string(s):
+    stack = []
+    current_string = ""
+    current_number = 0
+
+    for ch in s:
+        if ch.isdigit():
+            current_number = current_number * 10 + int(ch)
+        elif ch == "[":
+            stack.append(current_string)
+            stack.append(current_number)
+            current_number = 0
+            current_string = ""
+        elif ch == "]":
+            repeat = stack.pop()
+            prevStr = stack.pop()
+            current_string = prevStr + current_string * repeat
+        else:
+            current_string += ch
+    return current_string
+print(decode_string("2[a2[cd]]"))
