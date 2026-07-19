@@ -357,3 +357,19 @@ def decode_string(s):
             current_string += ch
     return current_string
 print(decode_string("2[a2[cd]]"))
+
+
+
+# Find the Maximum Occurring Character in a String
+def max_occurring_char(s):
+    freq = {}
+    max_count = 0
+    char = ""
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+
+        if freq[ch] > max_count:
+            max_count = freq[ch]
+            char = ch
+    return char
+print(max_occurring_char("hello"))

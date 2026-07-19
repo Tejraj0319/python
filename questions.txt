@@ -22,3 +22,4 @@ Move All Zeros to End
 Reverse Words in a Sentence
 Count frequency of each character in a string.
 LeetCode 394 - Decode String
+Find the Maximum Occurring Character in a String
