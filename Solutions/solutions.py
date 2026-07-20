@@ -360,6 +360,27 @@ print(decode_string("2[a2[cd]]"))
 
 
 
+
+
+# LeetCode 209 - Minimum Size Subarray Sum
+def min_subarray_len(target, arr):
+    total = 0
+    left = 0
+    min_length = float("inf")
+    for right in range(len(arr)):
+        total += arr[right]
+        while total >= target:
+            current_length = right - left + 1
+            if min_length > current_length:
+                min_length = current_length
+            total -= arr[left]
+            left += 1
+    return 0 if min_length == float("inf") else min_length
+print(min_subarray_len(7, [2, 3, 1, 2, 4, 3]))
+
+
+
+
 # Find the Maximum Occurring Character in a String
 def max_occurring_char(s):
     freq = {}
