@@ -394,3 +394,20 @@ def max_occurring_char(s):
             char = ch
     return char
 print(max_occurring_char("hello"))
+
+
+
+# Maximum Sum of K Consecutive Elements
+def max_sum_subarray(arr, k):
+    window_sum = 0
+    # Calculate the sum of the first window
+    for i in range(k):
+        window_sum += arr[i]
+    max_sum = window_sum
+    # Slide the window
+    for i in range(k, len(arr)):
+        window_sum = window_sum - arr[i - k] + arr[i]
+        if window_sum > max_sum:
+            max_sum = window_sum
+    return max_sum
+print(max_sum_subarray([2, 1, 10, 1, 3, 2], 3))
