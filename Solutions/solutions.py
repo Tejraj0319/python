@@ -411,3 +411,14 @@ def max_sum_subarray(arr, k):
             max_sum = window_sum
     return max_sum
 print(max_sum_subarray([2, 1, 10, 1, 3, 2], 3))
+
+
+
+# Count of Zeros and Ones in an Array
+def count_zeros_and_ones(arr):
+    ones = 0
+    for i in range(len(arr)):
+        ones += arr[i]
+    print("Count of 1 is:", ones)
+    print("Count of 0 is:", len(arr) - ones)
+count_zeros_and_ones([0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0])
