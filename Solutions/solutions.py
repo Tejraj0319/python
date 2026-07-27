@@ -422,3 +422,18 @@ def count_zeros_and_ones(arr):
     print("Count of 1 is:", ones)
     print("Count of 0 is:", len(arr) - ones)
 count_zeros_and_ones([0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0])
+
+
+
+# Find Leaders in an array
+def find_leaders(arr):
+    leaders = []
+    max_right = arr[-1]
+    leaders.append(max_right)
+    for i in range(len(arr) - 2, -1, -1):
+        if arr[i] > max_right:
+            leaders.append(arr[i])
+            max_right = arr[i]
+    leaders.reverse()
+    return leaders
+print(find_leaders([16, 17, 4, 3, 5, 2]))
