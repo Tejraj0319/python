@@ -10,8 +10,6 @@ def maxProductSubarray(nums):
         min_val = min(nums[i], min_val * nums[i])
         result = max(result, max_val)
     return result
-
-
 print(maxProductSubarray([2, -3, -3, -2, 4]))
 
 
@@ -32,8 +30,6 @@ def isValid(str):
             ):
                 return False
     return len(stack) == 0
-
-
 print(isValid("({[]})"))
 
 
@@ -48,8 +44,6 @@ def stringCompression(s):
             new_str += s[i - 1] + str(count)
             count = 1
     return new_str if len(new_str) < len(s) else s
-
-
 print(stringCompression("aabcccccaaa"))
 
 
@@ -72,8 +66,6 @@ def single_number(arr):
     for i in arr:
         xor = xor ^ i
     return xor
-
-
 print(single_number([1, 1, 4, 2, 2]))
 
 
@@ -85,8 +77,6 @@ def find_missing(arr, n):
     for num in arr:
         xor ^= num
     return xor
-
-
 print(find_missing([1, 2, 3, 5], 5))
 
 
@@ -100,8 +90,6 @@ def find_duplicates(arr):
         if value > 1:
             duplicates.append(key)
     return duplicates
-
-
 print(find_duplicates([1, 2, 3, 2, 4, 5, 1]))
 
 
@@ -114,8 +102,6 @@ def rotate_array(arr, k):
     for i in range(0, arr_len - k):
         result.append(arr[i])
     return result
-
-
 print(rotate_array([1, 2, 3, 4, 5, 6, 7, 8, 9], 2))
 
 
@@ -129,8 +115,6 @@ def product_except_self(arr):
                 prod = j * prod
         newArr.append(prod)
     return newArr
-
-
 print(product_except_self([1, 2, 3, 4]))
 
 
@@ -146,8 +130,6 @@ def to_lower_case(str):
         else:
             result += str[i]
     return result
-
-
 print(to_lower_case("RAJESH aNANta paTIL"))
 
 
@@ -159,8 +141,6 @@ def first_unique_char(s):
     for char in freq:
         if freq[char] == 1:
             return char
-
-
 print(first_unique_char("lovelveetcode"))
 
 
@@ -180,8 +160,6 @@ def is_isomorphic(str1, str2):
         obj1[char1] = char2
         obj2[char2] = char1
     return True
-
-
 print(is_isomorphic("egg", "add"))
 
 
@@ -193,9 +171,8 @@ def intersection(arr1, arr2):
             new_arr.append(i)
             arr2.remove(i)
     return new_arr
-
-
 print(intersection([1, 2, 2, 3, 4], [2, 2, 4, 6, 5, 1]))
+
 
 
 # Find the Longest Common Prefix
@@ -210,9 +187,8 @@ def longest_common_prefix(arr):
         else:
             break
     return new_str
-
-
 print(longest_common_prefix(["apple", "app", "application"]))
+
 
 
 # Check if two strings are anagrams
@@ -222,9 +198,8 @@ def isAnagram(str1, str2):
     s1 = "".join(sorted(str1.lower()))
     s2 = "".join(sorted(str1.lower()))
     return s1 == s2
-
-
 print(isAnagram("listen", "silent"))
+
 
 
 # Longest Substring Without Repeating Characters
@@ -237,9 +212,8 @@ def longest_substring(s):
         arr.append(char)
         max_length = max(max_length, len(arr))
     return max_length
-
-
 print(longest_substring("abcdabcbb"))
+
 
 
 # find the index from elements started repeating
@@ -248,9 +222,8 @@ def repeating(arr):
     for i in arr:
         s.add(i)
     return len(s)
-
-
 print(repeating([1, 2, 3, 4, 5, 6, 1, 2]))
+
 
 
 # Merge Two Sorted Arrays
@@ -273,9 +246,8 @@ def merge_sorted_arrays(arr1, arr2):
         result.append(arr2[j])
         j += 1
     return result
-
-
 print(merge_sorted_arrays([1, 2, 3, 5, 7], [4, 6]))
+
 
 
 # Check if a string is a palindrome
@@ -305,8 +277,6 @@ def move_zeros(arr):
         new_arr.append(0)
         j += 1
     return new_arr
-
-
 print(move_zeros([0, 1, 0, 3, 12]))
 
 
@@ -318,8 +288,6 @@ def reverse_words(text):
         reverse_word = i[::-1]
         result.append(reverse_word)
     return " ".join(result)
-
-
 print(reverse_words("hello world"))
 
 
@@ -329,8 +297,6 @@ def char_count(s):
     for char in s:
         count[char] = count.get(char, 0) + 1
     return count
-
-
 print(char_count("aabbc"))
 
 
@@ -360,8 +326,6 @@ print(decode_string("2[a2[cd]]"))
 
 
 
-
-
 # LeetCode 209 - Minimum Size Subarray Sum
 def min_subarray_len(target, arr):
     total = 0
@@ -377,7 +341,6 @@ def min_subarray_len(target, arr):
             left += 1
     return 0 if min_length == float("inf") else min_length
 print(min_subarray_len(7, [2, 3, 1, 2, 4, 3]))
-
 
 
 
@@ -438,3 +401,20 @@ def find_leaders(arr):
     return leaders
 print(find_leaders([16, 17, 4, 3, 5, 2]))
 
+
+
+# Merge Overlapping Intervals (Medium)
+def merge_intervals(intervals):
+    if len(intervals) <= 1:
+        return intervals
+    intervals.sort(key=lambda x:x[0])
+    result = [intervals[0]]
+    for i in range(1, len(intervals)):
+        last_interval = result[-1]
+        current_interval = intervals[i]
+        if current_interval[0] <= last_interval[1]:
+            last_interval[1] = max(last_interval[1], current_interval[1])
+        else:
+            result.append(current_interval)
+    return result
+print(merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]]))
