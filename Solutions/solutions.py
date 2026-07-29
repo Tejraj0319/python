@@ -418,3 +418,21 @@ def merge_intervals(intervals):
             result.append(current_interval)
     return result
 print(merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]]))
+
+
+
+# Longest Subarray with Sum ≤ K
+def longest_subarray(nums, k):
+    left = 0
+    total = 0
+    max_length = 0
+    for i in range(len(nums)):
+        total += nums[i]
+        while total > k:
+            total -= nums[left]
+            left += 1
+        length = i - left + 1
+        if length > max_length:
+            max_length = length
+    return max_length
+print(longest_subarray([2, 1, 5, 1, 3, 2], 7))
