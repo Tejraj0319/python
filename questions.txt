@@ -29,3 +29,5 @@ Find the Maximum Occurring Character in a String
 Find Leaders in an Array
 Merge Overlapping Intervals (Medium)
 Longest Subarray with Sum ≤ K
+Find the Majority Element(element that appears more than n/2 times.)
+Two Sum
