@@ -505,4 +505,20 @@ def two_sum(arr, target):
             j -= 1
         else:
             i += 1
+
+            
 print(two_sum([2, 11, 7, 15], 9))
+
+
+
+# Find the Length of the Last Word
+def length_of_last_word(str):
+    count = 0
+    i = len(str)-1
+    while i >=0 and str[i] == " ":
+        i -= 1
+    while i >=0 and str[i] != " ":
+        count += 1
+        i -= 1
+    return count
+print(length_of_last_word("   fly me   to   the moon  "))
