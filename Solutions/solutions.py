@@ -522,3 +522,29 @@ def length_of_last_word(str):
         i -= 1
     return count
 print(length_of_last_word("   fly me   to   the moon  "))
+
+
+
+# LeetCode 42 - Trapping Rain Water(Hard)
+def trap(arr):
+    left = 0
+    right = len(arr)-1
+    leftMax = 0
+    rightMax = 0
+    water = 0
+    while left < right:
+        if arr[left] < arr[right]:
+            if arr[left] >= leftMax :
+                leftMax = arr[left]
+            else:
+                water += leftMax - arr[left]
+            left += 1
+        else:
+            if arr[right] <= arr[left]:
+                if arr[right] > rightMax:
+                    rightMax = arr[right]
+                else:
+                    water += rightMax - arr[right]
+            right -= 1
+    return water
+print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
