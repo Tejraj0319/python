@@ -548,3 +548,21 @@ def trap(arr):
             right -= 1
     return water
 print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+
+
+
+# LeetCode 11 - Container With Most Water(Medium)
+def max_area(arr):
+    left = 0
+    right = len(arr)-1
+    maxWater = 0
+    while left < right:
+        width = right - left
+        currentArea = min(arr[left], arr[right]) * width
+        maxWater = max(currentArea, maxWater)
+        if arr[left] > arr[right]:
+            right -= 1
+        else:
+            left += 1
+    return maxWater
+print(max_area([1,8,6,2,5,4,8,3,7]))
