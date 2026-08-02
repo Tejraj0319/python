@@ -566,3 +566,27 @@ def max_area(arr):
             left += 1
     return maxWater
 print(max_area([1,8,6,2,5,4,8,3,7]))
+
+
+
+# LeetCode 5 - Longest Palindromic Substring(Medium)
+def longest_palindrome (str):
+    longest = ""
+    for i in range(len(str)):
+        for j in range(i, len(str)):
+            left = i
+            right = j 
+            isPalindrome = True
+            while left < right:
+                if str[left] != str[right]:
+                    isPalindrome = False
+                    break
+                left += 1
+                right -= 1
+            if isPalindrome:
+                if (j - i + 1) > len(longest):
+                    longest = ""
+                    for k in range(i, j + 1):
+                        longest += str[k]
+    return longest
+print(longest_palindrome("ikbabad"))
