@@ -590,3 +590,21 @@ def longest_palindrome (str):
                         longest += str[k]
     return longest
 print(longest_palindrome("ikbabad"))
+
+
+
+# LeetCode 300 - Longest Increasing Subsequence(Medium)
+def length_of_lis(nums):
+    tails = []
+    for num in nums:
+        if len(tails) == 0:
+            tails.append(num)
+        elif num > tails[-1]:
+            tails.append(num)
+        else:
+            for i in range(len(tails)):
+                if tails[i] >= num:
+                    tails[i] = num
+                    break
+    return len(tails)
+print("Answer:", length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))
