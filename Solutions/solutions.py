@@ -608,3 +608,37 @@ def length_of_lis(nums):
                     break
     return len(tails)
 print("Answer:", length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))
+
+
+
+# LeetCode 560 - Subarray Sum Equals K (Medium)
+def subarray_sum(arr,k):
+    count = 0
+    for i in range(len(arr)):
+        sum = 0
+        for j in range(i, len(arr)):
+            sum += arr[j]
+            if k == sum:
+                count += 1
+    return count
+print(subarray_sum([1,2,3], 3))
+
+
+
+# Maximum Difference Between Two Elements
+def max_difference(arr):
+    diff = 0
+    grt = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] > grt:
+            grt = arr[i]
+            for j in range(i - 1, -1, -1):
+                current_diff = grt - arr[j]
+                if current_diff > diff:
+                    diff = current_diff
+        else:
+            grt = arr[i]
+    if diff > 0:
+        return diff
+    return -1
+print(max_difference([2, 3, 8, 4, 6, 10, 1]))
