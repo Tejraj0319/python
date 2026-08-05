@@ -642,3 +642,28 @@ def max_difference(arr):
         return diff
     return -1
 print(max_difference([2, 3, 8, 4, 6, 10, 1]))
+
+
+
+# Find the Longest Consecutive Sequence
+def longest_consecutive(arr):
+    if len(arr) == 0 :
+        return 0
+    arr.sort()
+    prev = arr[0]
+    count = 1
+    max_count = 1
+    for i in range(1, len(arr)):
+        if arr[i] == prev:
+            continue
+        if arr[i]  == prev + 1:
+            count += 1
+        else:
+            if count > max_count:
+                count = max_count
+            count = 1
+        perv = arr[i]
+        if count > max_count:
+            count = max_count
+        return max_count 
+print(longest_consecutive([100, 4, 200, 1, 3, 2]))
