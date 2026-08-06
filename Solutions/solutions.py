@@ -667,3 +667,26 @@ def longest_consecutive(arr):
             count = max_count
         return max_count 
 print(longest_consecutive([100, 4, 200, 1, 3, 2]))
+
+
+
+# Maximum Product of Two Elements in an Array
+def max_product(arr):
+    largest = float('-inf')
+    second_largest = float('-inf')
+    smallest = float('inf')
+    second_smallest = float('inf')
+    for num in arr:
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif num > second_largest:
+            second_largest = num
+        if num < smallest:
+            second_smallest = smallest
+            smallest = num
+        elif num < second_smallest:
+            second_smallest = num
+    return max(largest * second_largest,
+               smallest * second_smallest)
+print(max_product([-10, -20, 5, 4]))
