@@ -690,3 +690,24 @@ def max_product(arr):
     return max(largest * second_largest,
                smallest * second_smallest)
 print(max_product([-10, -20, 5, 4]))
+
+
+
+
+# LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
+def findMaxLength(arr):
+    maxLength = 0
+    for i in range(len(arr)):
+        zeros = 0
+        ones = 0
+        for j in range(i, len(arr)):
+            if arr[j] == 0:
+                zeros += 1
+            else:
+                ones += 1
+            if ones == zeros:
+                currentLength = j - i + 1
+                if currentLength > maxLength:
+                    maxLength = currentLength
+    return maxLength
+print(findMaxLength([0,0,1,0,0,0,1,1]))
