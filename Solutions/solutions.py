@@ -711,3 +711,25 @@ def findMaxLength(arr):
                     maxLength = currentLength
     return maxLength
 print(findMaxLength([0,0,1,0,0,0,1,1]))
+
+
+# Longest Sub-array with Equal Sum of Two Halves
+def longestEqualHalfSum(arr):
+    max_Length = 0
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            current_Length = j - i + 1
+            if current_Length % 2 != 0:
+                continue
+            mid = i + current_Length // 2
+            first_half_Sum = 0
+            second_half_sum = 0
+            for k in range(i, mid):
+                first_half_Sum += arr[k]
+            for l in range(mid, j + 1):
+                second_half_sum += arr[l]
+            if first_half_Sum == second_half_sum:
+                if max_Length < current_Length:
+                    max_Length = current_Length
+    return max_Length
+print(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]))
