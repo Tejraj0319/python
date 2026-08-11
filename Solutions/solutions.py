@@ -693,7 +693,6 @@ print(max_product([-10, -20, 5, 4]))
 
 
 
-
 # LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
 def findMaxLength(arr):
     maxLength = 0
@@ -711,6 +710,7 @@ def findMaxLength(arr):
                     maxLength = currentLength
     return maxLength
 print(findMaxLength([0,0,1,0,0,0,1,1]))
+
 
 
 # Longest Sub-array with Equal Sum of Two Halves
@@ -733,3 +733,32 @@ def longestEqualHalfSum(arr):
                     max_Length = current_Length
     return max_Length
 print(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]))
+
+
+
+# Longest Substring with Exactly K Unique Characters
+def longest_substring(s, k):
+    maxLength = 0
+    for i in range(len(s)):
+        currentString = ""
+        uniqueCount = 0
+        for j in range(i,len(s)):
+            ch = s[j]
+            alreadyExists = False
+            for x in range(len(currentString)):
+                if currentString[x] == ch:
+                    alreadyExists = True
+                    break
+            if alreadyExists:
+                currentString = currentString + ch
+            else:
+                if uniqueCount < k:
+                    uniqueCount += 1
+                    currentString = currentString + ch
+                else:
+                    break
+            if uniqueCount == k:
+                if maxLength < len(currentString):
+                    maxLength = len(currentString)
+    return maxLength
+print(longest_substring("aabacbebebe", 3))
