@@ -762,3 +762,21 @@ def longest_substring(s, k):
                     maxLength = len(currentString)
     return maxLength
 print(longest_substring("aabacbebebe", 3))
+
+
+
+# Chocolate Distribution Problem
+def chocolate_distribution(arr, m):
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+    min_diff = float("inf")
+    for i in range(len(arr) - m + 1):
+        difference = arr[i + m - 1] - arr[i]
+        if difference < min_diff:
+            min_diff = difference
+    return min_diff
+print(chocolate_distribution([7, 3, 2, 4, 9, 12, 56], 3))
