@@ -506,35 +506,35 @@ def two_sum(arr, target):
         else:
             i += 1
 
-            
-print(two_sum([2, 11, 7, 15], 9))
 
+print(two_sum([2, 11, 7, 15], 9))
 
 
 # Find the Length of the Last Word
 def length_of_last_word(str):
     count = 0
-    i = len(str)-1
-    while i >=0 and str[i] == " ":
+    i = len(str) - 1
+    while i >= 0 and str[i] == " ":
         i -= 1
-    while i >=0 and str[i] != " ":
+    while i >= 0 and str[i] != " ":
         count += 1
         i -= 1
     return count
-print(length_of_last_word("   fly me   to   the moon  "))
 
+
+print(length_of_last_word("   fly me   to   the moon  "))
 
 
 # LeetCode 42 - Trapping Rain Water(Hard)
 def trap(arr):
     left = 0
-    right = len(arr)-1
+    right = len(arr) - 1
     leftMax = 0
     rightMax = 0
     water = 0
     while left < right:
         if arr[left] < arr[right]:
-            if arr[left] >= leftMax :
+            if arr[left] >= leftMax:
                 leftMax = arr[left]
             else:
                 water += leftMax - arr[left]
@@ -547,14 +547,15 @@ def trap(arr):
                     water += rightMax - arr[right]
             right -= 1
     return water
-print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
 
+
+print(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 
 
 # LeetCode 11 - Container With Most Water(Medium)
 def max_area(arr):
     left = 0
-    right = len(arr)-1
+    right = len(arr) - 1
     maxWater = 0
     while left < right:
         width = right - left
@@ -565,17 +566,18 @@ def max_area(arr):
         else:
             left += 1
     return maxWater
-print(max_area([1,8,6,2,5,4,8,3,7]))
 
+
+print(max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]))
 
 
 # LeetCode 5 - Longest Palindromic Substring(Medium)
-def longest_palindrome (str):
+def longest_palindrome(str):
     longest = ""
     for i in range(len(str)):
         for j in range(i, len(str)):
             left = i
-            right = j 
+            right = j
             isPalindrome = True
             while left < right:
                 if str[left] != str[right]:
@@ -589,8 +591,9 @@ def longest_palindrome (str):
                     for k in range(i, j + 1):
                         longest += str[k]
     return longest
-print(longest_palindrome("ikbabad"))
 
+
+print(longest_palindrome("ikbabad"))
 
 
 # LeetCode 300 - Longest Increasing Subsequence(Medium)
@@ -607,12 +610,13 @@ def length_of_lis(nums):
                     tails[i] = num
                     break
     return len(tails)
+
+
 print("Answer:", length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))
 
 
-
 # LeetCode 560 - Subarray Sum Equals K (Medium)
-def subarray_sum(arr,k):
+def subarray_sum(arr, k):
     count = 0
     for i in range(len(arr)):
         sum = 0
@@ -621,8 +625,9 @@ def subarray_sum(arr,k):
             if k == sum:
                 count += 1
     return count
-print(subarray_sum([1,2,3], 3))
 
+
+print(subarray_sum([1, 2, 3], 3))
 
 
 # Maximum Difference Between Two Elements
@@ -641,13 +646,14 @@ def max_difference(arr):
     if diff > 0:
         return diff
     return -1
-print(max_difference([2, 3, 8, 4, 6, 10, 1]))
 
+
+print(max_difference([2, 3, 8, 4, 6, 10, 1]))
 
 
 # Find the Longest Consecutive Sequence
 def longest_consecutive(arr):
-    if len(arr) == 0 :
+    if len(arr) == 0:
         return 0
     arr.sort()
     prev = arr[0]
@@ -656,7 +662,7 @@ def longest_consecutive(arr):
     for i in range(1, len(arr)):
         if arr[i] == prev:
             continue
-        if arr[i]  == prev + 1:
+        if arr[i] == prev + 1:
             count += 1
         else:
             if count > max_count:
@@ -665,17 +671,18 @@ def longest_consecutive(arr):
         perv = arr[i]
         if count > max_count:
             count = max_count
-        return max_count 
-print(longest_consecutive([100, 4, 200, 1, 3, 2]))
+        return max_count
 
+
+print(longest_consecutive([100, 4, 200, 1, 3, 2]))
 
 
 # Maximum Product of Two Elements in an Array
 def max_product(arr):
-    largest = float('-inf')
-    second_largest = float('-inf')
-    smallest = float('inf')
-    second_smallest = float('inf')
+    largest = float("-inf")
+    second_largest = float("-inf")
+    smallest = float("inf")
+    second_smallest = float("inf")
     for num in arr:
         if num > largest:
             second_largest = largest
@@ -687,10 +694,10 @@ def max_product(arr):
             smallest = num
         elif num < second_smallest:
             second_smallest = num
-    return max(largest * second_largest,
-               smallest * second_smallest)
-print(max_product([-10, -20, 5, 4]))
+    return max(largest * second_largest, smallest * second_smallest)
 
+
+print(max_product([-10, -20, 5, 4]))
 
 
 # LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
@@ -709,8 +716,9 @@ def findMaxLength(arr):
                 if currentLength > maxLength:
                     maxLength = currentLength
     return maxLength
-print(findMaxLength([0,0,1,0,0,0,1,1]))
 
+
+print(findMaxLength([0, 0, 1, 0, 0, 0, 1, 1]))
 
 
 # Longest Sub-array with Equal Sum of Two Halves
@@ -732,8 +740,9 @@ def longestEqualHalfSum(arr):
                 if max_Length < current_Length:
                     max_Length = current_Length
     return max_Length
-print(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]))
 
+
+print(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]))
 
 
 # Longest Substring with Exactly K Unique Characters
@@ -742,7 +751,7 @@ def longest_substring(s, k):
     for i in range(len(s)):
         currentString = ""
         uniqueCount = 0
-        for j in range(i,len(s)):
+        for j in range(i, len(s)):
             ch = s[j]
             alreadyExists = False
             for x in range(len(currentString)):
@@ -761,8 +770,9 @@ def longest_substring(s, k):
                 if maxLength < len(currentString):
                     maxLength = len(currentString)
     return maxLength
-print(longest_substring("aabacbebebe", 3))
 
+
+print(longest_substring("aabacbebebe", 3))
 
 
 # Chocolate Distribution Problem
@@ -779,4 +789,66 @@ def chocolate_distribution(arr, m):
         if difference < min_diff:
             min_diff = difference
     return min_diff
+
+
 print(chocolate_distribution([7, 3, 2, 4, 9, 12, 56], 3))
+
+
+# Remove Duplicates from Array
+def remove_duplicates(arr):
+    result = []
+    for i in range(len(arr)):
+        flag = False
+        for j in range(len(result)):
+            if arr[i] == result[j]:
+                flag = True
+                break
+        if not flag:
+            result.append(arr[i])
+    return result
+
+
+print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
+
+
+# Write Fibonacci Series
+def fibonacci(n):
+    fibo = [0, 1]
+    for i in range(2, n):
+        fibo.append(fibo[i - 1] + fibo[i - 2])
+    return fibo
+
+
+print(fibonacci(10))
+
+
+# Find Second Largest Element in Array
+def second_Largest(s):
+    largest = 0
+    second_Largest = 0
+    for i in range(len(s)):
+        if s[i] > largest:
+            second_Largest = largest
+            largest = s[i]
+        else:
+            if s[i] > second_Largest:
+                second_Largest = s[i]
+    return second_Largest
+
+
+print(second_Largest([10, 16, 20, 8, 15]))
+
+
+# Sort Array by Parity(Even first, then Odd)
+def sort_By_Parity(s):
+    even = []
+    odd = []
+    for i in range(len(s)):
+        if s[i] % 2 == 0:
+            even.append(s[i])
+        else:
+            odd.append(s[i])
+    return even + odd
+
+
+print(sort_By_Parity([3, 1, 2, 4]))

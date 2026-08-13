@@ -1,0 +1,19 @@
+
+
+
+
+Find First Non-Repeating Element
+Find Pair with Given Sum
+Find Maximum Subarray Sum — Kadane's Algorithm
+Group Anagrams
+Find Maximum Consecutive 1's in an Array
+Find First Recurring Character
+Separate Numbers and Strings in an Array
+Longest Substring with At Most K Distinct Characters
+isPrime
+Binary Search
+LeetCode 121 — Best Time to Buy and Sell Stock
+Tech Number
+LeetCode 643 — Maximum Average Subarray I
+Sort Array Elements
+LeetCode 125 — Valid Palindrome

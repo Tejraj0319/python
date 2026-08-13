@@ -44,3 +44,7 @@ LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
 Longest Sub-array with Equal Sum of Two Halves
 Longest Substring with Exactly K Unique Characters
 Chocolate Distribution Problem
+Remove Duplicates from Array
+Write Fibonacci Series
+Find Second Largest Element in Array
+Sort Array by Parity(Even first, then Odd)
