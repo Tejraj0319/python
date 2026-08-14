@@ -2,8 +2,8 @@
 
 
 
-Find First Non-Repeating Element
-Find Pair with Given Sum
+
+
 Find Maximum Subarray Sum — Kadane's Algorithm
 Group Anagrams
 Find Maximum Consecutive 1's in an Array

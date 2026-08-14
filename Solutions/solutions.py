@@ -852,3 +852,29 @@ def sort_By_Parity(s):
 
 
 print(sort_By_Parity([3, 1, 2, 4]))
+
+
+# Find First Non-Repeating Element
+def first_non_repeating(arr):
+    map = {}
+    for num in range(len(arr)):
+        map[num] = map.get(num, 0) + 1
+    for num in arr:
+        if map[num] == 1:
+            return num
+    return None
+
+
+print(first_non_repeating([4, 5, 1, 2, 0, 4, 1, 0]))
+
+
+# Find Pair with Given Sum
+def two_sum(s, target):
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)):
+            if s[i] + s[j] == target:
+                return [s[i], s[j]]
+    return []
+
+
+print(two_sum([2, 7, 11, 15], 13))

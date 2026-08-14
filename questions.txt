@@ -48,3 +48,5 @@ Remove Duplicates from Array
 Write Fibonacci Series
 Find Second Largest Element in Array
 Sort Array by Parity(Even first, then Odd)
+Find First Non-Repeating Element
+Find Pair with Given Sum
