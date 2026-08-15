@@ -878,3 +878,37 @@ def two_sum(s, target):
 
 
 print(two_sum([2, 7, 11, 15], 13))
+
+
+
+
+# Maximum Product of Three Elements
+def max_product_of_three(s):
+    max1 = float("-inf")
+    max2 = float("-inf")
+    max3 = float("-inf")
+    min1 = float("inf")
+    min2 = float("inf")
+    for i in range(len(s)):
+        n = s[i]
+        if n > max1:
+            max3 = max2
+            max2 = max1
+            max1 = n
+        elif n > max2 :
+            max3 = max2
+            max2 = n
+        elif n > max3:
+            max3 = n
+        if n < min1:
+            min2 = min1
+            min1 = n
+        elif n < min2:
+            min2 = n
+    product1 = max1 * max2 * max3
+    product2 = min1 * min2 * max1
+    if product1 > product2:
+        return product1
+    else:
+        return product2
+print(max_product_of_three([-10, -10, 1, 2, 3]))
