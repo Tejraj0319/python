@@ -51,3 +51,6 @@ Sort Array by Parity(Even first, then Odd)
 Find First Non-Repeating Element
 Find Pair with Given Sum
 Maximum Product of Three Elements
+Find the Maximum Subarray Sum (Kadane’s Algorithm)
+Group Anagrams
+Find the Maximum Consecutive 1's in an Array

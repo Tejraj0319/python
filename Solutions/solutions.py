@@ -912,3 +912,48 @@ def max_product_of_three(s):
     else:
         return product2
 print(max_product_of_three([-10, -10, 1, 2, 3]))
+
+
+
+# Find the Maximum Subarray Sum (Kadane’s Algorithm)
+def maxSubArray(arr):
+    currentSum = 0
+    maxSum = 0
+    for num in arr:
+        total = currentSum + num
+        if total < 0:
+            currentSum = 0
+        else:
+            currentSum = total
+        maxSum = max(maxSum, currentSum)
+    return maxSum
+print(maxSubArray([-2, 1, -3, 4, -1, 3, 1, -5, 4]))
+
+
+
+# Group Anagrams
+def groupAnagrams(strs):
+    map = {}
+    for string in strs:
+        key = "".join(sorted(string))
+        if key not in map:
+            map[key] = []
+        map[key].append(string)
+    return list(map.values())
+print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+
+
+# Find the Maximum Consecutive 1's in an Array
+def maxConsecutiveOnes(s):
+    count = 0
+    maxCount = 0
+    for i in s:
+        if i == 1:
+            count += 1
+            if count > maxCount:
+                maxCount = count
+        else:
+            count = 0
+    return maxCount
+print(maxConsecutiveOnes([1,1,0,1,1,1]))
