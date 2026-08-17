@@ -880,8 +880,6 @@ def two_sum(s, target):
 print(two_sum([2, 7, 11, 15], 13))
 
 
-
-
 # Maximum Product of Three Elements
 def max_product_of_three(s):
     max1 = float("-inf")
@@ -895,7 +893,7 @@ def max_product_of_three(s):
             max3 = max2
             max2 = max1
             max1 = n
-        elif n > max2 :
+        elif n > max2:
             max3 = max2
             max2 = n
         elif n > max3:
@@ -911,8 +909,9 @@ def max_product_of_three(s):
         return product1
     else:
         return product2
-print(max_product_of_three([-10, -10, 1, 2, 3]))
 
+
+print(max_product_of_three([-10, -10, 1, 2, 3]))
 
 
 # Find the Maximum Subarray Sum (Kadane’s Algorithm)
@@ -927,8 +926,9 @@ def maxSubArray(arr):
             currentSum = total
         maxSum = max(maxSum, currentSum)
     return maxSum
-print(maxSubArray([-2, 1, -3, 4, -1, 3, 1, -5, 4]))
 
+
+print(maxSubArray([-2, 1, -3, 4, -1, 3, 1, -5, 4]))
 
 
 # Group Anagrams
@@ -940,8 +940,9 @@ def groupAnagrams(strs):
             map[key] = []
         map[key].append(string)
     return list(map.values())
-print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
+
+print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
 
 # Find the Maximum Consecutive 1's in an Array
@@ -956,4 +957,44 @@ def maxConsecutiveOnes(s):
         else:
             count = 0
     return maxCount
-print(maxConsecutiveOnes([1,1,0,1,1,1]))
+
+
+print(maxConsecutiveOnes([1, 1, 0, 1, 1, 1]))
+
+
+# Find the First Recurring Character
+def first_recurring_char(s):
+    seen = set()
+    for char in s:
+        if char in seen:
+            return char
+        seen.add(char)
+
+
+print(first_recurring_char("abbcc"))
+
+
+# without inbuilt
+def first_recurring_char(s):
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)):
+            if s[i] == s[j]:
+                return s[j]
+
+
+print(first_recurring_char("abbcc"))
+
+
+# Separate Numbers and Strings in an Array
+def separate(val):
+    string = []
+    numbers = []
+    for i in val:
+        if isinstance(i, str):
+            string.append(i)
+        else:
+            numbers.append(i)
+    return [string] + [numbers]
+
+
+print(separate([10, "a", "b", "c", 11, 4]))

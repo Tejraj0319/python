@@ -54,3 +54,5 @@ Maximum Product of Three Elements
 Find the Maximum Subarray Sum (Kadane’s Algorithm)
 Group Anagrams
 Find the Maximum Consecutive 1's in an Array
+Find the First Recurring Character
+Separate Numbers and Strings in an Array
