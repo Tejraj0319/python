@@ -998,3 +998,23 @@ def separate(val):
 
 
 print(separate([10, "a", "b", "c", 11, 4]))
+
+
+# Longest Substring with At Most K Distinct Characters
+def longestSubstringKDistinct(s, k):
+    left = 0
+    maxLength = 0
+    count = {}
+    for right in range(len(s)):
+        char = s[right]
+        count[char] = count.get(char, 0) + 1
+        while len(count) > k:
+            count[s[left]] -= 1
+            if count[s[left]] == 0:
+                del count[s[left]]
+            left += 1
+        maxLength = max(maxLength, right - left + 1)
+    return maxLength
+
+
+print(longestSubstringKDistinct("eceba", 2))
