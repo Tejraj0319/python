@@ -1047,3 +1047,25 @@ def binary_search(arr, target):
 
 
 print(binary_search([10, 20, 30, 40, 50, 60, 70, 80, 90], 30))
+
+
+
+
+# Leetcode 121- best time to buy and sell stock
+def maxProfit(prices):
+    min_price = prices[0]
+    max_profit = 0
+
+    i = 1
+    while i < len(prices):
+        if prices[i] < min_price:
+            min_price = prices[i]
+
+        profit = prices[i] - min_price
+
+        if profit > max_profit:
+            max_profit = profit
+
+        i += 1
+
+    return max_profit
