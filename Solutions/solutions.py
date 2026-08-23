@@ -1047,3 +1047,49 @@ def binary_search(arr, target):
 
 
 print(binary_search([10, 20, 30, 40, 50, 60, 70, 80, 90], 30))
+
+
+# LeetCode 121 — Best Time to Buy and Sell Stock
+def maxProfit(prices):
+    min_price = prices[0]
+    max_profit = 0
+    i = 1
+    while i < len(prices):
+        if prices[i] < min_price:
+            min_price = prices[i]
+        profit = prices[i] - min_price
+        if profit > max_profit:
+            max_profit = profit
+        i += 1
+    return max_profit
+
+
+# Tech Number
+digits = 0
+
+
+def count_digits(n):
+    global digits
+    temp = n
+    while temp > 0:
+        digits += 1
+        temp = temp // 10
+
+
+def is_tech_num(num):
+    count_digits(num)
+    half_length = digits // 2
+    if digits % 2 != 0:
+        print("Not a techNumber!")
+        return
+    divisor = 10**half_length
+    first_half = num // divisor
+    second_half = num % divisor
+    sum_and_square_of_half = (first_half + second_half) ** 2
+    if sum_and_square_of_half == num:
+        print("Is techNumber")
+    else:
+        print("Not a techNumber")
+
+
+is_tech_num(2025)

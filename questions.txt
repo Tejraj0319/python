@@ -59,3 +59,5 @@ Separate Numbers and Strings in an Array
 Longest Substring with At Most K Distinct Characters
 isPrime
 Binary Search: search for a target value in a sorted array
+LeetCode 121 — Best Time to Buy and Sell Stock
+Tech Number
