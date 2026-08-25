@@ -1100,3 +1100,17 @@ def is_tech_num(n):
 
 
 is_tech_num(2025)
+
+
+# Sort Array Elements
+def sort_array(s):
+    for i in range(len(s)):
+        for j in range(len(s) - 1):
+            if s[j] > s[j + 1]:
+                temp = s[j]
+                s[j] = s[j + 1]
+                s[j + 1] = temp
+    return s
+
+
+print(sort_array([5, 2, 8, 1, 4]))

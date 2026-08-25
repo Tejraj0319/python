@@ -15,5 +15,5 @@
 
 
 LeetCode 643 — Maximum Average Subarray I
-Sort Array Elements
+
 LeetCode 125 — Valid Palindrome
