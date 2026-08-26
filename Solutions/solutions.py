@@ -1114,3 +1114,20 @@ def sort_array(s):
 
 
 print(sort_array([5, 2, 8, 1, 4]))
+
+
+
+# LeetCode 643 — Maximum Average Subarray I
+def maximum_average_subarray_i(arr, k):
+    window_sum = 0
+    for i in range(k):
+        window_sum += arr[i]
+    max_sum = window_sum
+    for i in range(k, len(arr)):
+        window_sum += arr[i]
+        window_sum -= arr[i - k]
+        max_sum = max(max_sum, window_sum)
+    return max_sum / k
+
+
+print(maximum_average_subarray_i([1, 12, -5, -6, 50, 3], 4))
