@@ -1116,7 +1116,6 @@ def sort_array(s):
 print(sort_array([5, 2, 8, 1, 4]))
 
 
-
 # LeetCode 643 — Maximum Average Subarray I
 def maximum_average_subarray_i(arr, k):
     window_sum = 0
@@ -1131,3 +1130,25 @@ def maximum_average_subarray_i(arr, k):
 
 
 print(maximum_average_subarray_i([1, 12, -5, -6, 50, 3], 4))
+
+
+# LeetCode 125 — Valid Palindrome
+def is_palindrome(s):
+    new_str = ""
+    for i in range(len(s)):
+        ascii_value = ord(s[i])
+        if 65 <= ascii_value <= 90:
+            ascii_value = ascii_value + 32
+        if 97 <= ascii_value <= 122 or 48 <= ascii_value <= 57:
+            new_str = new_str + chr(ascii_value)
+    left = 0
+    right = len(new_str) - 1
+    while left < right:
+        if new_str[left] != new_str[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+
+
+print(is_palindrome("A man, a plan, a canal: Panama"))
