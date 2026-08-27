@@ -108,3 +108,55 @@ for i in range(n):
         else:
             pattern += "  "
     print(pattern)
+
+
+# *
+# * *
+# *   *
+# *     *
+# * * * * *
+
+n = 5
+for i in range(n):
+    pattern = ""
+    for j in range(n):
+        if j == 0 or j == i or i == n - 1:
+            pattern += "* "
+        else:
+            pattern += "  "
+    print(pattern)
+
+
+# * * * * *
+# *     *
+# *   *
+# * *
+# *
+n = 5
+for i in range(n):
+    pattern = ""
+    for j in range(i, n):
+        if j == i or j == n - 1 or i == 0:
+            pattern += "* "
+        else:
+            pattern += "  "
+    print(pattern)
+
+
+#           *
+#         * *
+#       *   *
+#     *     *
+#   * * * * *
+n = 5
+for i in range(n):
+    pattern = ""
+    for j in range(i, n):
+        pattern += "  "
+    for k in range(i + 1):
+        if k == 0 or i == n - 1 or k == i:
+            pattern += "* "
+        else:
+            pattern += "  "
+
+    print(pattern)
